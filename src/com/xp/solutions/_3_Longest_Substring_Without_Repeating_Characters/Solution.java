@@ -8,6 +8,7 @@ package com.xp.solutions._3_Longest_Substring_Without_Repeating_Characters;
  */
 public class Solution {
     public  int lengthOfLongestSubstring(String s) {
+
         int idx = 0;  // 遍历下标
         int maxLength = 0; // 最大长度
         int maxStart = 0;  // 最大长度的开始下标

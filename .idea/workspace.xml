@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f0ea5037-0439-4c98-af27-233212278ff5" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/xp/solutions/_2_Add_Two_Numbers/Solution.java" afterPath="$PROJECT_DIR$/src/com/xp/solutions/_2_Add_Two_Numbers/Solution.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/xp/solutions/_3_Longest_Substring_Without_Repeating_Characters/Solution.java" afterPath="$PROJECT_DIR$/src/com/xp/solutions/_3_Longest_Substring_Without_Repeating_Characters/Solution.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -35,25 +35,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Solution.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Solution.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/xp/solutions/_2_Add_Two_Numbers/Solution.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="141">
-              <caret line="13" column="4" lean-forward="false" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="4" />
+              <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#249#250#0" expanded="true" />
-                <element signature="e#272#273#0" expanded="true" />
+                <element signature="e#245#246#0" expanded="true" />
+                <element signature="e#268#269#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Solution.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Solution.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/xp/solutions/_3_Longest_Substring_Without_Repeating_Characters/Solution.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="196">
-              <caret line="18" column="44" lean-forward="false" selection-start-line="18" selection-start-column="44" selection-end-line="18" selection-end-column="44" />
+            <state relative-caret-position="76">
+              <caret line="10" column="8" lean-forward="false" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -89,8 +89,8 @@
       <list>
         <option value="$PROJECT_DIR$/src/com/xp/solutions/_1_TWO_SUM/Solution.java" />
         <option value="$PROJECT_DIR$/.gitingore" />
-        <option value="$PROJECT_DIR$/src/com/xp/solutions/_3_Longest_Substring_Without_Repeating_Characters/Solution.java" />
         <option value="$PROJECT_DIR$/src/com/xp/solutions/_2_Add_Two_Numbers/Solution.java" />
+        <option value="$PROJECT_DIR$/src/com/xp/solutions/_3_Longest_Substring_Without_Repeating_Characters/Solution.java" />
       </list>
     </option>
   </component>
@@ -166,6 +166,15 @@
               <item name="com" type="462c0819:PsiDirectoryNode" />
               <item name="xp" type="462c0819:PsiDirectoryNode" />
               <item name="solutions" type="462c0819:PsiDirectoryNode" />
+              <item name="_1_TWO_SUM" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="leetcode" type="b2602c69:ProjectViewProjectNode" />
+              <item name="leetcode" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="xp" type="462c0819:PsiDirectoryNode" />
+              <item name="solutions" type="462c0819:PsiDirectoryNode" />
               <item name="_2_Add_Two_Numbers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -177,6 +186,15 @@
               <item name="solutions" type="462c0819:PsiDirectoryNode" />
               <item name="_2_Add_Two_Numbers" type="462c0819:PsiDirectoryNode" />
               <item name="Solution.java" type="529ef68f:ClassesTreeStructureProvider$PsiClassOwnerTreeNode" />
+            </path>
+            <path>
+              <item name="leetcode" type="b2602c69:ProjectViewProjectNode" />
+              <item name="leetcode" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="xp" type="462c0819:PsiDirectoryNode" />
+              <item name="solutions" type="462c0819:PsiDirectoryNode" />
+              <item name="_3_Longest_Substring_Without_Repeating_Characters" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -273,12 +291,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1515996421244</updated>
-      <workItem from="1515996426460" duration="5690000" />
+      <workItem from="1515996426460" duration="5727000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5690000" />
+    <option name="totallyTimeSpent" value="5727000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="38" y="33" width="1243" height="777" extended-state="6" />
@@ -324,7 +342,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/xp/solutions/_3_Longest_Substring_Without_Repeating_Characters/Solution.java</url>
-          <line>18</line>
+          <line>19</line>
           <properties />
           <option name="timeStamp" value="1" />
         </line-breakpoint>
@@ -358,14 +376,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/xp/solutions/_3_Longest_Substring_Without_Repeating_Characters/Solution.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="18" column="44" lean-forward="false" selection-start-line="18" selection-start-column="44" selection-end-line="18" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitingore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="95">
@@ -377,12 +387,20 @@
     <entry file="file://$PROJECT_DIR$/src/com/xp/solutions/_2_Add_Two_Numbers/Solution.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="141">
-          <caret line="13" column="4" lean-forward="false" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="4" />
+          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#249#250#0" expanded="true" />
-            <element signature="e#272#273#0" expanded="true" />
+            <element signature="e#245#246#0" expanded="true" />
+            <element signature="e#268#269#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/xp/solutions/_3_Longest_Substring_Without_Repeating_Characters/Solution.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="10" column="8" lean-forward="false" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="8" />
+          <folding />
         </state>
       </provider>
     </entry>
