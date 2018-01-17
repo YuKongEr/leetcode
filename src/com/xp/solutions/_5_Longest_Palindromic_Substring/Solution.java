@@ -10,33 +10,28 @@ public class Solution {
 
     public static String longestPalindrome(String s) {
 
-        if (s.length() == 1) {
-            return s;
+        if (s == null || s.length() == 0) {
+            return null;
         }
-
-        int max = -1;
-        String res = null;
-        int[][] dp = new int[s.length() + 1][s.length() + 1];
+        int start = 0;
+        int end = 0;
+        int len = 0;
+        boolean[][] dp = new boolean[s.length()][s.length()];
         for (int i = s.length() - 1; i >= 0; i--) {
-            dp[i][i] = 1;
-            for (int j = i + 1; j < s.length(); j++) {
-                if (s.charAt(i) == s.charAt(j)) {
-                    dp[i][j] = dp[i + 1][j - 1] + 2;
-                } else {
-                    dp[i][j] = Math.max(dp[i][j - 1], dp[i + 1][j]);
+            for (int j = i; j < s.length(); j++) {
+                if (i == j || (s.charAt(i) == s.charAt(j) && j - i < 2)
+                        || (s.charAt(i) == s.charAt(j) && dp[i + 1][j - 1])) {
+                    dp[i][j] = true;
+                    if (j - i + 1 > len) {
+                        len = j - i;
+                        start = i;
+                        end = j + 1;
+                    }
                 }
-                if (dp[i][j] > max) {
-                    max = dp[i][j];
-                    res = s.substring(i,j + 1);
-                }
+
             }
         }
-        return res;
-
-    }
-
-    public static void main(String[] args) {
-        System.out.println(longestPalindrome("abcda"));
+        return s.substring(start, end);
     }
 
 }
