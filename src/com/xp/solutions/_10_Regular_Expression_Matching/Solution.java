@@ -93,8 +93,11 @@ public class Solution {
                 if (p.charAt(j - 1) != '*') {
                     match[i][j] = match[i - 1][j - 1] && (s.charAt(i - 1) == p.charAt(j - 1) || p.charAt(j - 1) == '.');
                 } else if (p.charAt(j - 1) == '*') {
+                    // *匹配0个
                     match[i][j] = (match[i ][j - 2]
+                            //   *匹配1个
                             || (match[i - 1][j - 2] && (s.charAt(i - 1) == p.charAt(j - 2) || p.charAt(j - 2) == '.'))
+                            //   *匹配多个
                             || (match[i - 1][j] && (s.charAt(i - 1) == p.charAt(j - 2) || p.charAt(j - 2) == '.'))
                     );
                 }
