@@ -1,4 +1,4 @@
-package com.xp.solutions._12_Roman_to_Integer;
+package com.xp.solutions._13_Roman_to_Integer;
 
 import java.util.HashMap;
 
@@ -23,6 +23,7 @@ public class Solution {
         map.put("X", 10);
         map.put("V",5);
         map.put("I", 1);
+
         for (int i = 0; i < roman.length(); i++) {
             int val = map.get(String.valueOf(roman.charAt(i)));
             if (i == roman.length() - 1 || val >= map.get(String.valueOf((roman.charAt(i+1))))){
