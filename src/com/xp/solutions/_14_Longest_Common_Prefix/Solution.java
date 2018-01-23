@@ -17,6 +17,8 @@ public class Solution {
         return longestCommonPrefix(strs, 0, strs.length - 1);
     }
 
+
+
     private String longestCommonPrefix(String[] strs, int l, int r) {
         if (l == r) {
             return strs[l];
