@@ -1,5 +1,7 @@
 package com.xp.solutions._14_Longest_Common_Prefix;
 
+import java.util.Date;
+
 /**
  * @author yukong
  * @version V1.0
