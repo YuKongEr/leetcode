@@ -1,9 +1,7 @@
 package com.xp.solutions._17_Letter_Combinations_of_a_Phone_Number;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  * @author yukong
