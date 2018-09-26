@@ -23,9 +23,9 @@ public class Solution {
 
 
      public static class ListNode {
-         int val;
-          ListNode next;
-          ListNode(int x) { val = x; }
+         public int val;
+         public ListNode next;
+         public ListNode(int x) { val = x; }
      }
 
     public static ListNode removeNthFromEnd(ListNode head, int n) {
