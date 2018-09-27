@@ -60,6 +60,14 @@ public class Solution {
         return listNode.next;
     }
 
+    /**
+     * 分段反转
+     * pre 为反转段前节点
+     * next 为反正转断后节点
+     * @param pre
+     * @param next
+     * @return
+     */
     public static ListNode reverse(ListNode pre, ListNode next) {
         ListNode last = pre.next;
         ListNode curr = last.next;
