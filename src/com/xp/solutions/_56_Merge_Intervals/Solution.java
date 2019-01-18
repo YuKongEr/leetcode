@@ -18,6 +18,12 @@ import java.util.List;
  * 输入: [[1,4],[4,5]]
  * 输出: [[1,5]]
  * 解释: 区间 [1,4] 和 [4,5] 可被视为重叠区间。
+ *
+ * 解题思路：
+ *  根据对象的start 升序排序
+ *  遍历对象列表
+ *  - 如果当前结果列表最后一个元素end比下一个元素的start小   则把下一个加入到结果列表
+ *  - 否则 将当前结果列表中最后一个元素的end赋值 = max(res.get(last()).end, current.end)
  */
 public class Solution {
 
