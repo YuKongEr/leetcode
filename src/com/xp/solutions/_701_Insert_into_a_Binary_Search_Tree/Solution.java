@@ -49,8 +49,6 @@ public class Solution {
         return root;
     }
 
-
-
 }
 
  class TreeNode {
