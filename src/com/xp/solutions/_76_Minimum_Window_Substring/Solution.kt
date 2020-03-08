@@ -1,4 +1,4 @@
-package com.xp.solutions._76_76_Minimum_Window_Substring
+package com.xp.solutions._76_Minimum_Window_Substring
 
 /**
  *
