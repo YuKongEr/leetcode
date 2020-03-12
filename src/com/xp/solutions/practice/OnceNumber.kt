@@ -30,5 +30,6 @@ class Solution {
 }
 
 fun main() {
+    print(Any().toString())
     print(Solution().singleNumber(intArrayOf(4,4,1)))
 }
