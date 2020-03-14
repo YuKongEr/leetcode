@@ -1,9 +1,22 @@
 package com.xp.solutions.practice;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 /**
+ * 给定一个字符串 s，将 s 分割成一些子串，使每个子串都是回文串。
+ *
+ * 返回 s 所有可能的分割方案。
+ *
+ * 示例:
+ *
+ * 输入: "aab"
+ * 输出:
+ * [
+ *   ["aa","b"],
+ *   ["a","a","b"]
+ * ]
  * @author yukong
  * @date 2020/3/11 17:00
  */
@@ -86,11 +99,20 @@ public class SplitPalindrome {
         return true;
     }
 
+    解法二 分治优化
+        每次判断一个字符串是否是回文串的时候，我们都会调用 isPalindrome 判断。这就会造成一个问题，比如字符串 abbbba，期间我们肯定会判断 bbbb 是不是回文串，也会判断 abbbba 是不是回文串。判断
+        abbbba
+        是不是回文串的时候，在 isPalindrome 中依旧会判断中间的 bbbb 部分。而其实如果我们已经知道了 bbbb 是回文串，只需要判断 abbbba 的开头和末尾字符是否相等即可。
 
-    */
-    public static void main(String[] args) {
-          System.out.println(new SplitPalindrome().partition("aab"));
-    }
+        所以我们为了避免一些重复判断，可以用动态规划的方法，把所有字符是否是回文串提前存起来。
+
+        对于字符串 s。
+
+        用 dp[i][j] 表示 s[i，j] 是否是回文串。
+
+        然后有 dp[i][j] = s[i] == s[j] && dp[i+1][j-1] 。
+
+        我们只需要两层 for 循环，从每个下标开始，考虑所有长度的子串即可。
 
     public List<List<String>> partition(String s) {
         boolean[][] dp = new boolean[s.length()][s.length()];
@@ -122,6 +144,38 @@ public class SplitPalindrome {
         }
         return ans;
     }
+    */
 
+    public List<List<String>> partition(String s) {
+        boolean[][] dp = new boolean[s.length()][s.length()];
+        for (int l = 1; l <= s.length(); l++) {
+            for (int i = 0; i <= s.length() - l; i++) {
+                int j = i + l - 1;
+                dp[i][j] = s.charAt(i) == s.charAt(j) && (l < 3 || dp[i + 1][j - 1]);
+            }
+        }
+        List<List<String>> ans = new ArrayList<>();
 
+        partitionHelper(s, 0, dp, new LinkedList<>(), ans);
+        return ans;
+    }
+
+    private void partitionHelper(String s, int start, boolean[][] dp, LinkedList<String> temp, List<List<String>> res) {
+        if(start == s.length()) {
+            res.add(new LinkedList<>(temp));
+            return;
+        }
+        for (int i = start; i < s.length(); i++) {
+            if(dp[start][i]) {
+                temp.offer(s.substring(start, i + 1));
+                partitionHelper(s, i + 1, dp, temp, res);
+                temp.removeLast();
+            }
+        }
+
+    }
+
+    public static void main(String[] args) {
+        System.out.println(new SplitPalindrome().partition("abb"));
+    }
 }
