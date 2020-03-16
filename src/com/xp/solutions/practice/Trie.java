@@ -18,8 +18,8 @@ package com.xp.solutions.practice;
 public class Trie {
 
     Trie[] childrens;
-    char value;
-    String  item;
+    String item;
+    boolean isLeaf;
 
     /**
      * Initialize your data structure here.
@@ -27,13 +27,13 @@ public class Trie {
     public Trie() {
         childrens = new Trie[26];
         item = "";
-        value = '/';
+        isLeaf = false;
     }
 
     public Trie(char ch) {
         childrens = new Trie[26];
         item = "";
-        value = ch;
+        isLeaf = false;
     }
 
     /**
@@ -44,6 +44,7 @@ public class Trie {
         for (int i = 0; i < word.length(); i++) {
             temp = temp.insert1(word.charAt(i));
         }
+        temp.isLeaf = true;
         temp.item = word;
     }
 
@@ -65,14 +66,14 @@ public class Trie {
         Trie temp = this;
         for (int i = 0; i < word.length(); i++) {
             temp = temp.search1(word.charAt(i));
-            if(temp == null && i < word.length()) {
+            if (temp == null && i < word.length()) {
                 return false;
             }
         }
-        if(temp == null) {
+        if (temp == null) {
             return false;
         }
-        if(word.equals(temp.item)) {
+        if (word.equals(temp.item)) {
             return true;
         }
         return isStartWith;
@@ -80,7 +81,7 @@ public class Trie {
     }
 
     private Trie search1(char value) {
-        return childrens[value - 'a'] ;
+        return childrens[value - 'a'];
     }
 
     /**
