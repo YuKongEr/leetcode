@@ -1,5 +1,7 @@
 package com.xp.solutions._384_Shuffle_an_Array;
 
+import java.util.Random;
+
 /**
  * 打乱数组 打乱一个没有重复元素的数组。
  * <p>
