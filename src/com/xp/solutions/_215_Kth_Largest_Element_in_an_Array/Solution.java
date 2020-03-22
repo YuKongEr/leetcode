@@ -27,14 +27,6 @@ public class Solution {
         return left;
     }
 
-    private void quickSort(int[] list, int left, int right) {
-        if (left < right) {
-            int base = division(list, left, right);
-            quickSort(list,left, base - 1);
-            quickSort(list, base + 1, right);
-        }
-    }
-
     private int findKthLargest(int[] list, int k){
         k = list.length - k;
         int l = 0, h = list.length - 1;

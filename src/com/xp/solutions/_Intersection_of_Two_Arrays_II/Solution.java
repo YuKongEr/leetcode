@@ -1,4 +1,4 @@
-package com.xp.solutions._350._Intersection_of_Two_Arrays_II;
+package com.xp.solutions._Intersection_of_Two_Arrays_II;
 
 import java.util.Arrays;
 
