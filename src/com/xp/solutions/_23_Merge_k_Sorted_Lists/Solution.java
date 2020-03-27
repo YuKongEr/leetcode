@@ -20,9 +20,9 @@ public class Solution {
 
 
      public static class ListNode {
-         int val;
+          int val;
           ListNode next;
-          ListNode(int x) { val = x; }
+          public ListNode(int x) { val = x; }
      }
 
     public ListNode mergeKLists(ListNode[] lists) {
