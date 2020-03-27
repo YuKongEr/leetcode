@@ -7,14 +7,12 @@ package com.xp.solutions._p20_reverse_linklist;
  */
 public class Solution {
     public ListNode reverseList(ListNode head) {
-        ListNode dummyHead = new ListNode(-1);
         ListNode next = null;
         ListNode curr = head;
         ListNode prev = head.next;
         while (prev != null) {
             curr.next = next;
             next = curr;
-            dummyHead.next = curr;
             curr = prev;
             prev = prev.next;
         }
