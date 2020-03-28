@@ -1,7 +1,7 @@
 package com.xp.solutions._171_Excel_Sheet_Column_Number;
 
 /**
- * @author yukong
+ * @author yukongs
  * @date 2020/3/27 23:25
  */
 public class Solution {
