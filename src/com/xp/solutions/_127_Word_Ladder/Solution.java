@@ -1,5 +1,6 @@
 package com.xp.solutions._127_Word_Ladder;
 
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
@@ -9,6 +10,7 @@ import java.util.Queue;
  * @date 2020/4/15 22:54
  */
 public class Solution {
+    // bfs
     public int ladderLength(String beginWord, String endWord, List<String> wordList) {
         if (!wordList.contains(endWord)) {
             return 0;
@@ -22,32 +24,33 @@ public class Solution {
         Queue<String> queue = new LinkedList<>();
         queue.offer(beginWord);
         int count = 0;
-        while (queue.size() > 0) {
+        while (!queue.isEmpty()) {
             int size = queue.size();
-            ++count;
-            while (size-- > 0) {
-                String start = queue.poll();
-                for (int i = 0; i < wordList.size(); ++i) {
-                    // 通过index判断是否已经访问
-                    if (visited[i]) {
+            for (int i = 0; i < size; i++) {
+                String word = queue.poll();
+                count++;
+                for (int j = 0; j < wordList.size(); j++) {
+                    if (visited[j]) {
                         continue;
                     }
-                    String s = wordList.get(i);
-                    if (!canConvert(start, s)) {
+                    String s = wordList.get(j);
+                    if (!canConvert(word, s)) {
                         continue;
                     }
-                    if (s.equals(endWord)) {
-                        return count + 1;
+                    if (endWord.equals(s)) {
+                        return ++count;
                     }
-                    visited[i] = true;
                     queue.offer(s);
+                    visited[j] = true;
                 }
             }
+
         }
         return 0;
     }
 
-    public boolean canConvert(String s1, String s2) {
+
+    private boolean canConvert(String s1, String s2) {
         // 因为题目说了单词长度相同，可以不考虑长度问题
         // if (s1.length() != s2.length()) return false;
         int count = 0;
@@ -60,6 +63,10 @@ public class Solution {
             }
         }
         return count == 1;
+    }
+
+    public static void main(String[] args) {
+        new Solution().ladderLength("hit", "cog", Arrays.asList("hot", "dot", "dog", "lot", "log", "cog"));
     }
 
 }
