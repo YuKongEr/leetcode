@@ -26,65 +26,52 @@ public class Solution {
      }
 
     public ListNode mergeKLists(ListNode[] lists) {
-        return partion(lists, 0, lists.length - 1);
+        return partiton(lists, 0, lists.length - 1);
     }
 
-    public  ListNode partion(ListNode[] lists,int s,int e){
-        if(s==e)  return lists[s];
-        if(s<e){
-            int q=(s+e)/2;
-            ListNode l1=partion(lists,s,q);
-            ListNode l2=partion(lists,q+1,e);
-            return mergeTwoLists(l1,l2);
-        }else
-            return null;
-    }
-
-    public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
-        // 存在有一条或者多条空链表的情况 可以直接返回
-        if (l1 == null) {
-            return l2;
-        }
-        if (l2 == null) {
-            return l1;
-        }
-
-        ListNode p1 = l1;
-        ListNode p2 = l2;
-        // 定义头
-        ListNode head = null;
-
-        // 选择值叫小的一条链表的首节点作为头
-        if (p1.val < p2.val) {
-            head = p1;
-            p1 = p1.next;
+    private ListNode partiton(ListNode[] lists, int left, int right) {
+        if(left == right) {
+            return lists[left];
+        } else if(left < right) {
+            int mid = left + (right - left) / 2;
+            ListNode leftNode = partiton(lists, left, mid);
+            ListNode rightNode = partiton(lists, mid + 1, right);
+            return mergeList(leftNode, rightNode);
         } else {
-            head = p2;
-            p2 = p2.next;
+            return null;
         }
-        ListNode p = head;
-        while (p1 != null && p2 != null) {
-            if (p1.val < p2.val) {
-                head.next = p1;
-                p1 = p1.next;
+
+    }
+
+    private ListNode mergeList(ListNode left, ListNode right) {
+        if(left == null) {
+            return right;
+        }
+        if(right == null) {
+            return left;
+        }
+        ListNode head = new ListNode(-1);
+        ListNode curr = head;
+        while(left != null && right != null) {
+            if(left.val < right.val) {
+                curr.next = new ListNode(left.val);
+                left = left.next;
             } else {
-                head.next = p2;
-                p2 = p2.next;
+                curr.next = new ListNode(right.val);
+                right = right.next;
             }
-            head = head.next;
+            curr = curr.next;
         }
-
-        while (p1 != null) {
-            head.next = p1;
-            p1 = p1.next;
-            head = head.next;
+        while(left != null) {
+            curr.next = new ListNode(left.val);
+            curr = curr.next;
+            left = left.next;
         }
-
-        while (p2 != null) {
-            head.next = p2;
-            p2 = p2.next;
-            head = head.next;
+        while(right != null) {
+            curr.next = new ListNode(right.val);
+            curr = curr.next;
+            right = right.next;
         }
-        return p;
+        return head.next;
     }
 }
