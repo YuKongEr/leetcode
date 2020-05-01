@@ -40,16 +40,8 @@ public class Solution {
         ListNode p1 = l1;
         ListNode p2 = l2;
         // 定义头
-        ListNode head = null;
+        ListNode head = new ListNode(-1);
 
-        // 选择值叫小的一条链表的首节点作为头
-        if (p1.val < p2.val) {
-            head = p1;
-            p1 = p1.next;
-        } else {
-            head = p2;
-            p2 = p2.next;
-        }
         ListNode p = head;
         while (p1 != null && p2 != null) {
             if (p1.val < p2.val) {
@@ -73,7 +65,7 @@ public class Solution {
             p2 = p2.next;
             head = head.next;
         }
-        return p;
+        return p.next;
     }
 
 }
