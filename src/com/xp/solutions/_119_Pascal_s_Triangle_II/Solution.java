@@ -1,8 +1,6 @@
 package com.xp.solutions._119_Pascal_s_Triangle_II;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 
 /**
