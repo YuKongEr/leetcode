@@ -7,6 +7,7 @@ package com.xp.solutions._680_Valid_Palindrome_II;
 public class Solution {
 
     public boolean validPalindrome(String s) {
+
         int start = -1;
         int end = s.length();
         while (++start < --end) {
