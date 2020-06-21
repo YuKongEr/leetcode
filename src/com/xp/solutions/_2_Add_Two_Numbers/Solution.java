@@ -24,77 +24,32 @@ public class Solution {
 
 
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
-
-
-        ListNode head = null;
-
-        //进位标识
+        ListNode dummyHead = new ListNode(-1);
+        ListNode head = dummyHead;
+        ListNode ll1 = l1;
+        ListNode ll2 = l2;
         int carry = 0;
+        while(ll1 != null || ll2 != null) {
+            int val = 0;
+            if (ll1 != null) {
+                val += ll1.val;
+                ll1 = ll1.next;
 
-        //头结点
-        if (l1.val + l2.val + carry < 10) {
-            head = new ListNode(l1.val + l2.val);
-            carry = 0;
-        } else {
-            head = new ListNode(l1.val + l2.val + carry - 10);
-            carry = 1;
-        }
-
-        ListNode p = head;
-
-        while (l1.next != null && l2.next != null) {
-            ListNode node = null;
-            if (l1.next.val + l2.next.val + carry < 10) {
-                node = new ListNode(l1.next.val + l2.next.val + carry);
-                carry = 0;
-            } else {
-                node = new ListNode(l1.next.val + l2.next.val + carry - 10);
-                carry = 1;
             }
-            p.next = node;
-            p = p.next;
-            l1 = l1.next;
-            l2 = l2.next;
-        }
-        
-        //l1 比较长
-        while (l1.next != null) {
-            ListNode node = null;
-            if (l1.next.val  + carry < 10) {
-                node = new ListNode(l1.next.val + carry);
-                carry = 0;
-            } else {
-                node = new ListNode(l1.next.val  + carry - 10);
-                carry = 1;
+            if (ll2 != null) {
+                val += ll2.val;
+                ll2 = ll2.next;
             }
-            p.next = node;
-            p = p.next;
-            l1 = l1.next;
+            val += carry;
+            carry = val / 10;
+            val = val % 10;
+            head.next = new ListNode(val);
+            head = head.next;
         }
-
-
-        //l2 比较长
-        while (l2.next != null) {
-            ListNode node = null;
-            if (l2.next.val  + carry < 10) {
-                node = new ListNode(l2.next.val + carry);
-                carry = 0;
-            } else {
-                node = new ListNode(l2.next.val  + carry - 10);
-                carry = 1;
-            }
-            p.next = node;
-            p = p.next;
-            l2 = l2.next;
+        if (carry != 0) {
+            head.next = new ListNode(carry);
         }
-
-        //最后进位
-        if ( carry == 1) {
-            ListNode node = new ListNode(carry);
-            p.next = node;
-        }
-        return head;
-
+        return dummyHead.next;
     }
 
 }
