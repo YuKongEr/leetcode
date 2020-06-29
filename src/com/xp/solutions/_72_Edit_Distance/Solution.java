@@ -1,5 +1,10 @@
 package com.xp.solutions._72_Edit_Distance;
 
+import javafx.util.Pair;
+
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * @author yukong
  * @date 2020/6/28 21:24
@@ -28,5 +33,33 @@ public class Solution {
             }
         }
         return dp[m][n];
+    }
+
+
+    Map<Pair<Integer, Integer>, Integer> mem = new HashMap<>();
+
+    private int minDistance1(String word1, String word2) {
+        return dfs(word1, word1.length(), word2, word2.length());
+    }
+
+    private int dfs(String word1, int p, String word2, int q) {
+        if (p == 0) {
+            return word2.length();
+        }
+        if (q == 0) {
+            return word1.length();
+        }
+        if (mem.get(new Pair(p, q)) != null) {
+            return mem.get(new Pair(p, q));
+        }
+        int min = 0;
+        if (word1.charAt(p) == word2.charAt(q)) {
+            min = dfs(word1, p - 1, word2, q - 1);
+        } else {
+            min = Math.min(dfs(word1, p - 1, word2, q), Math.min(dfs(word1, p, word2, q - 1), dfs(word1, p - 1,
+                    word2, q - 1))) + 1;
+        }
+        mem.put(new Pair(p , q), min);
+        return min;
     }
 }
