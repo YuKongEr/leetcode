@@ -42,4 +42,52 @@ public class Solution {
         return list[k];
     }
 
+
+
+    Random random = new Random();
+    // 快排 partition解决
+    public int findKthLargest1(int[] nums, int k) {
+        int left = 0;
+        int right = nums.length - 1;
+        // 从小到大排序
+        k = right - k + 1;
+        while(left < right) {
+            int index = partition(nums, left, right);
+            if (index == k) {
+                break;
+            } else if (index < k) {
+                left = index + 1;
+            } else {
+                right = index - 1;
+            }
+        }
+        return nums[k];
+    }
+
+    // 快排的分区
+    private int partition(int[] nums, int left, int right) {
+        if (right > left) {
+            int randomIndex = left + 1 + random.nextInt(right - left);
+            int tmp = nums[left];
+            nums[left] = nums[randomIndex];
+            nums[randomIndex] = tmp;
+        }
+        int base = nums[left];
+        while(left < right) {
+            // 从右向左 找到第一个比base小的数字
+            while(left < right && nums[right] > base) {
+                right--;
+            }
+            // 交换
+            nums[left] = nums[right];
+            // 从左向右 找到第一个比base大的数字
+            while(left < right && nums[left] <= base) {
+                left++;
+            }
+            nums[right] = nums[left];
+        }
+        nums[left] = base;
+        return left;
+    }
+
 }
