@@ -1,5 +1,8 @@
 package com.xp.solutions._6_ZigZag_Conversion;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * @author yukong
  * @version V1.0
@@ -8,25 +11,28 @@ package com.xp.solutions._6_ZigZag_Conversion;
  * @date 2018/1/18 13:43
  **/
 public class Solution {
-    public String convert(String s, int nRows) {
-        if(s == null || s.length()==0 || nRows <=0) {
-            return "";
-        }
-        if(nRows == 1) {
+    public String convert(String s, int numRows) {
+        if(numRows < 2) {
             return s;
         }
-        StringBuilder res = new StringBuilder();
-        int size = 2*nRows-2;
-        for(int i=0;i<nRows;i++)
-        {
-            for(int j=i;j<s.length();j+=size)
-            {
-                res.append(s.charAt(j));
-                if(i!=0 && i!=nRows-1 && j+size-2*i<s.length()) {
-                    res.append(s.charAt(j+size-2*i));
-                }
-            }
+        List<StringBuilder> list = new ArrayList<StringBuilder>(numRows);
+        for (int i = 0; i < numRows; i++) {
+            list.add(new StringBuilder());
         }
-        return res.toString();
+        int flag = -1;
+        int rowIdx = 0;
+        for (char c: s.toCharArray()) {
+            list.get(rowIdx).append(c);
+            if (rowIdx == 0 || rowIdx >= numRows - 1) {
+                flag = - flag;
+            }
+            rowIdx += flag;
+        }
+        StringBuilder sb = new StringBuilder();
+        for (StringBuilder s1: list) {
+            sb.append(s1.toString());
+
+        }
+        return sb.toString();
     }
 }
