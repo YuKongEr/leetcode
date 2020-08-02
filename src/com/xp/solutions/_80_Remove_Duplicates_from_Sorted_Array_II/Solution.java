@@ -39,4 +39,18 @@ package com.xp.solutions._80_Remove_Duplicates_from_Sorted_Array_II;
  * }
  */
 public class Solution {
+    public int removeDuplicates(int[] nums) {
+        if (nums == null || nums.length == 0) {
+            return 0;
+        }
+        int curr = 0, next = 0;
+        while(next < nums.length) {
+            if (curr < 2 || nums[curr - 2] != nums[next]) {
+                nums[curr++] = nums[next];
+
+            }
+            next++;
+        }
+        return curr;
+    }
 }
