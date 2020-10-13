@@ -59,6 +59,16 @@ public class Solution {
         return first;
     }
 
+    public ListNode swapPairs3(ListNode head) {
+        if (head == null || head.next == null) {
+            return head;
+        }
+        ListNode next = head.next;
+        head.next = swapPairs3(next.next);
+        next.next = head;
+        return next;
+    }
+
     public static void main(String[] args) {
         ListNode l = new ListNode(1);
         l.next = new ListNode(2);
